@@ -51,7 +51,11 @@ def crear_tarea():
 @app.route('/tareas/<int:id>', methods=['DELETE'])
 def eliminar_tarea(id):
     """Eliminar tarea por ID. Código 200 si existe, 404 si no."""
-    # TODO: Implementar
-    pass
+    for tarea in tareas:
+        if tarea['id'] == id:
+            tareas.remove(tarea)
+            return jsonify({'mensaje': 'Tarea eliminada'}), 200
+    return jsonify({'error': 'Tarea no encontrada'}), 404
+
 if __name__ == '__main__':
     app.run(port=5000, debug=True)
