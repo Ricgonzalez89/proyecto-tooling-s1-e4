@@ -31,6 +31,9 @@ pip install -r requirements.txt
 ```bash
 python app.py 
 ```
-## COMANDOS PARA:
-* **LINTER: flake8 app.py** 
-* **FORMATTRS: black app.py** 
+## Calidad de Código y Estilo
+Para mantener el código limpio y bajo los estándares de PEP 8, utilizamos las siguientes herramientas.
+
+* **Formattrs (formateado): black app.py** 
+* **Linter de advertencias y estilo: flake8 app.py** 
+* **Linter de calidad y análisis estático: pylint app.py** 
