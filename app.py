@@ -10,7 +10,7 @@ from flask import Flask, request, jsonify
 app = Flask(__name__)
 # BASE DE DATOS EN MEMORIA (NO MODIFICAR)
 tareas = []
-contador_id = 1
+contador_id = 1  
 
 
 # Hacemos el route para el get, donde se va a mostrar la lista de tareas
@@ -29,7 +29,7 @@ def crear_tarea():
     Validar, crear tarea, retornar código 201 o 400.
     """
     # Llamamos a la variable global contador_id
-    global contador_id
+    global contador_id  
     # Pedimos los datos del request en formato JSON
     datos = request.get_json()
     # Validamos que los datos no sean nulos y que contengan la clave 'titulo'
@@ -51,10 +51,10 @@ def crear_tarea():
 
 
 @app.route("/tareas/<int:id>", methods=["DELETE"])
-def eliminar_tarea(id):
+def eliminar_tarea(id):  
     """Eliminar tarea por ID. Código 200 si existe, 404 si no."""
     # Recorremos la lista de tareas
-    for tarea in tareas:
+    for tarea in tareas[:]:
         # Buscamos la tarea con el ID proporcionado
         if tarea["id"] == id:
             # Si encontramos la tarea, la eliminamos de la lista
