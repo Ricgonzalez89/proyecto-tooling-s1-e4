@@ -29,9 +29,13 @@ def crear_tarea():
     #pedimos los datos del request en formato JSON
     datos = request.get_json()
     #Validamos que los datos no sean nulos y que contengan la clave 'titulo'
-    if not datos or 'titulo' not in datos:
+    if not datos:
         #Si los datos no son válidos, retornamos un error con código 400 (Bad Request)
         return jsonify({'error': 'Faltan datos'}), 400
+    #Validamos que los datos contengan la clave 'titulo'
+    if 'titulo' not in datos:
+        #Si titulo no esta en los datos, retornamos un error con código 400 (Bad Request)
+        return jsonify({'error': 'El unico campo requerido es: "titulo"'}), 400
     #Si los datos son válidos, creamos la nueva tarea con un ID único y el título proporcionado
     nueva_tarea = {
         'id': contador_id,
