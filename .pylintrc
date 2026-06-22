@@ -39,7 +39,7 @@ extension-pkg-whitelist=
 fail-on=
 
 # Specify a score threshold under which the program will exit with error.
-fail-under=8.1
+fail-under=8.1 # <- MODIFICADO: Para flexibilizar la puntuacion a partir de la cual Pylint retorna error.
 
 # Interpret the stdin as a python script, whose filename needs to be passed as
 # the module_or_package argument.
@@ -192,7 +192,7 @@ good-names=i,
            ex,
            Run,
            _,
-           contador_id
+           contador_id # <- MODIFICADO: Para poder usar la variable indicada en la estructura del codigo.
 
 # Good variable names regexes, separated by a comma. If names match any regex,
 # they will always be accepted
@@ -447,8 +447,8 @@ disable=raw-checker-failed,
         use-symbolic-message-instead,
         use-implicit-booleaness-not-comparison-to-string,
         use-implicit-booleaness-not-comparison-to-zero,
-        redefined-builtin,
-        global-statement
+        redefined-builtin, # <- MODIFICADO: Para emplear variables con nombres semejantes a variables y funciones integradas de Python (como "id").
+        global-statement # <- MODIFICADO: Para poder usar variables globales dentro de ambitos locales.
 
 # Enable the message, report, category or checker with the given id(s). You can
 # either give multiple identifier separated by comma (,) or put this option
