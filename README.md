@@ -37,3 +37,4 @@ Para mantener el código limpio y bajo los estándares de PEP 8, utilizamos las 
 * **Formattrs (formateado): black app.py** 
 * **Linter de advertencias y estilo: flake8 app.py** 
 * **Linter de calidad y análisis estático: pylint app.py** 
+* **Ejecución de 2 pruebas unitarias para los endpoints: pytest -q** 
